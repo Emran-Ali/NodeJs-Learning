@@ -11,15 +11,10 @@ hp.startEvent();
 
 console.log('lodding...');
 
-fs.appendFile(
-    'index.html',
-    `
-Hello`,
-    (err) => {
-        if (err) throw err;
-        console.log('success');
-    }
-);
+fs.appendFile('index.html', 'Hello', (err) => {
+    if (err) throw err;
+    console.log('success');
+});
 // console.log(http);
 
 // console.log(os.freemem());

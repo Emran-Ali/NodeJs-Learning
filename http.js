@@ -13,8 +13,11 @@ http.createServer((req, res) => {
     const readStream = fs.createReadStream(`${__dirname}/text.txt`);
     if (req.url === '/') {
         readStream.pipe(res);
-    }
-    if (req.url === '/about') {
-        res.write('page not foud');
+    } else if (req.url === '/about') {
+        res.write('<h1>welcome to about page</h1>');
+        res.end();
+    } else {
+        res.write('nothing here');
+        res.end();
     }
 }).listen(3000);
